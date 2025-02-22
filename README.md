@@ -12,7 +12,11 @@ The Algorithmic Justic League (AJL) is an organization that works to combat the 
 
 ## Goals
 
+Our main goal with this project is to build a model that is ethically responsible and can be used by a diverse set of people. As mentioned in our project overview, current models being used in the dermatology field fail to classify patients of diverse skin tones which results in misdiagnosis and delayed treatment which runs the possibility of being fatal or detrimental to the life of the patient. Therefore, with our model, we hope to address diverse groups of people by using more representative data and train a model high in accuracy levels in order to improve the current healthcare experience of vulnerable communities.  
+
 ## Methodology
+
+To meet our goals and objectives, we will be using a sequential Convolution Neural Network (CNN) since we will need our model to learn from the images in our data. To do this, we will be using tensorflow keras for import and building our neural network. This is our optimal choice of modeling because of the many layers we can build on, allowing each layer to learn to detect the different features within an image which will be very useful in classifying skin conditions across the different features (i.e. skin color) of patients. 
 
 **Contributors**: Dhriti Madireddy, Ula Nguyen, Vanessa Pliego, Andersen Prince, Phuoc Uong, Yvette Roos (last name alphabetical order). 
 January-March 2025
