@@ -118,10 +118,10 @@ Check out [this guide](https://drive.google.com/file/d/1kYKaVNR\_l7Abx2kebs3AdDi
 | Name | GitHub Handle | Contribution |
 | ----- | ----- | ----- |
 | Andersen Prince | @x | Contributed to building CNN model |
-| Dhriti Madireddy | @x | x |
-| Phuoc Uong | @x | x |
+| Dhriti Madireddy | @x | Contributed to building CNN model |
+| Phuoc Uong | @x | Contributed to building CNN model |
 | Ula Nguyen | @Uyenng | Contributed to building CNN model |
 | Vanessa Pliego | @vpliego | Contributed to building CNN model |
-| Yvette Roos | @yvette-m | x |
+| Yvette Roos | @yvette-m | Contributed to building CNN model |
 
 January-March 2025
