@@ -2,12 +2,9 @@
 
 ## **🎯 Project Highlights**
 
-**Example:**
-
-* Built a \[insert model type\] using \[techniques used\] to solve \[Kaggle competition task\]
-* Achieved an F1 score of \[insert score\] and a ranking of \[insert ranking out of participating teams\] on the final Kaggle Leaderboard
-* Used \[explainability tool\] to interpret model decisions
-* Implemented \[data preprocessing method\] to optimize results within compute constraints
+* Built a CNN model using ReLU as our activation function to introduce non-linearity to the network in order to address the Algorithmic Justice League’s goal of bringing inclusivity to model building. The specific task from AJL seeks to address issues within healthcare and dermatology that currently leave individuals of color without accurate diagnoses because of faulty systems. In the model that we build, we aim to produce accurate results for individuals of a wide range of skin tones and minimize the bias that we are currently seeing within the healthcare industry.  
+* Achieved an F1/accuracy score of 31%.
+* Implemented data encoding and created image generators to load images and labels properly to optimize results within computing constraints
 
 🔗 [Equitable AI for Dermatology | Kaggle Competition Page](https://www.kaggle.com/competitions/bttai-ajl-2025/overview)
 
@@ -17,19 +14,17 @@
 **Provide step-by-step instructions so someone else can run your code and reproduce your results. Depending on your setup, include:**
 
 * How to clone the repository
-* How to install dependencies
-* How to set up the environment
-* * How to access the dataset(s)
+Follow [this instruction](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
+
+* How to access the dataset(s)
+  
 * How to run the notebook or scripts
+Our notebook was created on Kaggle, so the easiest way to run it is to use Kaggle’s platform itself. Kaggle will automatically handle the environment, dependencies, and all the required settings for you. 
+
+If you want to run the notebook locally, open the .ipynb file using Jupyter Notebook, Python, or any other IDE you prefer. If any dependencies are missing, install them using pip: ```pip install <package-name>```
 
 ---
 ## **🏗️ Project Overview**
-
-**Describe:**
-
-* The Kaggle competition and its connection to the Break Through Tech AI Program
-* The objective of the challenge
-* The real-world significance of the problem and the potential impact of your work
 
 ### About the Kaggle Competition
 This project is part of a Kaggle competition presented by Break Through Tech AI in collaboration with the [Algorithmic Justice League (AJL)](https://www.ajl.org/about). Participants include AI Fellows from the Virtual, Boston (MIT), and Los Angeles (UCLA) programs.
@@ -48,15 +43,12 @@ As data and machine learning engineers, we have a responsibility to challenge th
 ---
 ## **📊 Data Exploration**
 
-**Describe:**
+For our CNN model, we used data provided by AJL which includes about 4,500 images representing roughly 21 skin conditions with a range of skin tones. 
 
-* The dataset(s) used (i.e., the data provided in Kaggle \+ any additional sources)
-* Data exploration and preprocessing approaches
-* Challenges and assumptions when working with the dataset(s)
+For pre-processing the dataset, we augmented the images to introduce randomness and variety by applying random transformations (like rotation, flipping, zooming, or shifting) to the original images.
 
-**Potential visualizations to include:**
+We assume that all the data files (image file paths) are working.
 
-* Plots, charts, heatmaps, feature visualizations, sample dataset images
 ---
 ## **🧠 Model Development**
 
@@ -67,7 +59,7 @@ As data and machine learning engineers, we have a responsibility to challenge th
 * Training setup (e.g., % of data for training/validation, evaluation metric, baseline performance)
 
 
-**Methodology**: To meet our goals and objectives, we will be using a sequential Convolution Neural Network (CNN) since we will need our model to learn from the images in our data. To do this, we will be using tensorflow keras for importing and building our neural network. This is our optimal choice of modeling because of the many layers we can build on, allowing each layer to learn to detect the different features within an image which will be very useful in classifying skin conditions across the different features (i.e. skin color) of patients. 
+We use a sequential Convolution Neural Network (CNN) to learn from the images in our data. To do this, we will be using tensorflow keras for importing and building our neural network. This is our optimal choice of modeling because of the many layers we can build on, allowing each layer to learn to detect the different features within an image which will be very useful in classifying skin conditions across the different features (i.e. skin color) of patients.
 
 ---
 ## **📈 Results & Key Findings**
