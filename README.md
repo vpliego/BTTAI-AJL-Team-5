@@ -11,14 +11,12 @@
 ---
 ## **👩🏽‍💻 Setup & Execution**
 
-**Provide step-by-step instructions so someone else can run your code and reproduce your results. Depending on your setup, include:**
-
-* How to clone the repository
+### How to clone the repository
 Follow [this instruction](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
 
 * How to access the dataset(s)
   
-* How to run the notebook or scripts
+### How to run the notebook or scripts
 Our notebook was created on Kaggle, so the easiest way to run it is to use Kaggle’s platform itself. Kaggle will automatically handle the environment, dependencies, and all the required settings for you. 
 
 If you want to run the notebook locally, open the .ipynb file using Jupyter Notebook, Python, or any other IDE you prefer. If any dependencies are missing, install them using pip: ```pip install <package-name>```
