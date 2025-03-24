@@ -69,6 +69,14 @@ We use a sequential Convolution Neural Network (CNN) to learn from the images in
 * How your model performed across different skin tones (AJL)
 * Insights from evaluating model fairness (AJL)
 
+Our model achieved an F1 score of 31% on the validation set and ranked 37 on the Kaggle leaderboard. We used F1 score as the main metric because it balances precision and recall, which felt more important than just accuracy, especially for this task where false negatives could have a real world impact.
+
+The model did okay. It didn’t get everything right, but it learned patterns and was better than just guessing. We tried different models, and the one we used at the end gave me the best results, even if the score wasn’t super high.
+
+When we checked how it worked for different skin tones, we saw it did better on lighter skin and not as well on darker skin. That means it wasn’t totally fair and didn’t treat everyone the same.
+
+Considering fairness got me to consider more about how models can fail in a variety of ways. Just because it performs fine overall doesn't imply that it's fine for everybody. If we could continue to work on it, we'd attempt to correct the bias by incorporating more examples of dark skin so that it might learn better. We would also test it on other groups to ensure that it is equitable for all, not only the most well-represented in the training data. This is necessary because an unfair model could result in individuals being discriminated against or treated unequally in real-world applications, which is unacceptable.
+
 **Potential visualizations to include:**
 
 * Confusion matrix, precision-recall curve, feature importance plot, prediction distribution, outputs from fairness or explainability tools
@@ -83,6 +91,10 @@ Check out [this guide](https://drive.google.com/file/d/1kYKaVNR\_l7Abx2kebs3AdDi
 1. What steps did you take to address [model fairness](https://haas.berkeley.edu/wp-content/uploads/What-is-fairness_-EGAL2.pdf)? (e.g., leveraging data augmentation techniques to account for training dataset imbalances; using a validation set to assess model performance across different skin tones)
 2. What broader impact could your work have?
 
+We looked at the model's performance on various skin tones to evaluate its fairness. The model performed better on light skin tones and relatively poorly on dark skin tones, so we concluded that there was an issue. Thus, we thought about adding more photos of individuals with darker skin tones to balance this out. We even thought about changing some of the pictures, like making some lighter or darker, so that the model would get more kinds of photos to train on. We did not get a chance to do all that, but we learned why we should.
+
+If this kind of model were to be used in real-world applications, it could potentially help with something like image analysis or maybe even helping people. However, if the model is seen as unfair, then it could also cause more damage than the benefits it may be intended to have. Our project has shown that it is not enough for a model to simply be decent. It needs to work well for everyone. 
+
 ---
 
 ## **🚀 Next Steps & Future Improvements**
@@ -92,6 +104,12 @@ Check out [this guide](https://drive.google.com/file/d/1kYKaVNR\_l7Abx2kebs3AdDi
 * What are some of the limitations of your model?
 * What would you do differently with more time/resources?
 * What additional datasets or techniques would you explore?
+
+Our model did not always produce correct results. It struggled with darker skin colors and was less accurate. It gave unpredictable results at times, which we blame on the incompleteness and lack of balance of the training data.
+
+If we had more time, we'd try to make the model fairer by adding more pictures of people with darker skin. We would also try different types of models to see if any worked better. And we would clean up the data more so it's easier for the model to learn from.
+
+We would find more datasets with all sorts of skin colors. We'd also use techniques like changing the images size or changing the brightness to help the model practice with differently looking photos. 
 
 ---
 
@@ -107,7 +125,7 @@ Check out [this guide](https://drive.google.com/file/d/1kYKaVNR\_l7Abx2kebs3AdDi
 
 | Name | GitHub Handle | Contribution |
 | ----- | ----- | ----- |
-| Andersen Prince | @x | Contributed to building CNN model |
+| Andersen Prince | @APrince26 | Contributed to building CNN model |
 | Dhriti Madireddy | @x | Contributed to building CNN model |
 | Phuoc Uong | @x | Contributed to building CNN model |
 | Ula Nguyen | @Uyenng | Contributed to building CNN model |
