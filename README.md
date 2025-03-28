@@ -2,9 +2,10 @@
 
 ## **🎯 Project Highlights**
 
-* Built a CNN model using ReLU as our activation function to introduce non-linearity to the network in order to address the Algorithmic Justice League’s goal of bringing inclusivity to model building. The specific task from AJL seeks to address issues within healthcare and dermatology that currently leave individuals of color without accurate diagnoses because of faulty systems. In the model that we build, we aim to produce accurate results for individuals of a wide range of skin tones and minimize the bias that we are currently seeing within the healthcare industry.  
-* Achieved an F1/accuracy score of 31%.
-* Implemented data encoding and created image generators to load images and labels properly to optimize results within computing constraints
+* Built a CNN model using ReLU activation to support inclusive healthcare diagnostics.
+* Focused on reducing bias in dermatology by training on diverse skin tones.
+* Achieved 31% accuracy.
+* Used data encoding and image generators to efficiently process images within computing limits.
 
 🔗 [Equitable AI for Dermatology | Kaggle Competition Page](https://www.kaggle.com/competitions/bttai-ajl-2025/overview)
 
@@ -12,9 +13,10 @@
 ## **👩🏽‍💻 Setup & Execution**
 
 ### How to clone the repository
-Follow [this instruction](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
+Follow [this instruction](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). 
 
-* How to access the dataset(s)
+### How to access the dataset(s)
+You can download the training and testing data from the [competition site](https://www.kaggle.com/competitions/bttai-ajl-2025/data).
   
 ### How to run the notebook or scripts
 Our notebook was created on Kaggle, so the easiest way to run it is to use Kaggle’s platform itself. Kaggle will automatically handle the environment, dependencies, and all the required settings for you. 
@@ -50,72 +52,74 @@ We assume that all the data files (image file paths) are working.
 ---
 ## **🧠 Model Development**
 
-**Describe (as applicable):**
+**Model Used:**
+* A sequential Convolutional Neural Network (CNN) was implemented using TensorFlow Keras to classify skin conditions from images.
+* CNNs are well-suited for this task because they can learn hierarchical features, making them effective for analyzing skin images, such as texture, color, and skin condition.
 
-* Model(s) used (e.g., CNN with transfer learning, regression models)
-* Feature selection and Hyperparameter tuning strategies
-* Training setup (e.g., % of data for training/validation, evaluation metric, baseline performance)
+**Feature Selection & Hyperparameter Tuning:**
+* **Feature Selection:**
+  * No manual feature selection was performed.
+  * Data augmentation techniques (rotation, flipping, scaling) were used to enhance the training dataset and improve generalization.
 
+* **Model Adjustments:**
+  * Batch Normalization: Applied after each convolutional layer to stabilize training and improve performance.
+  * Max Pooling: Used after each convolutional block to reduce dimensionality while preserving important features.
+  * Dropout: Added in fully connected layers with a 0.5 probability to prevent overfitting.
 
-We use a sequential Convolution Neural Network (CNN) to learn from the images in our data. To do this, we will be using tensorflow keras for importing and building our neural network. This is our optimal choice of modeling because of the many layers we can build on, allowing each layer to learn to detect the different features within an image which will be very useful in classifying skin conditions across the different features (i.e. skin color) of patients.
+* **Hyperparameter Tuning:**
+  * Optimizer: Adam with a learning rate of 0.00005.
+  * Loss function: Sparse categorical cross-entropy.
+  * Early Stopping: Monitored validation loss with a patience of 7 epochs to prevent overfitting and restore the best weights.
+
+**Training Setup:**
+* **Data Split:**
+  * 80% for training and 20% for validation.
+    
+* **Image Preprocessing:**
+  * Images were preprocessed using data generators, resized to 128x128 pixels, and batch normalized to improve training efficiency.
+    
+* **Training Details:**
+  * Trained for 30 epochs with accuracy as the evaluation metric.
+  * Early stopping ensured the model did not overfit during training.
+  * The trained model was saved as `dermatology_cnn.h5` for further use and evaluation.
 
 ---
 ## **📈 Results & Key Findings**
 
-**Describe (as applicable):**
+Our model achieved an **accuracy of 31%** on the validation set and ranked **37th on the Kaggle leaderboard**. We used the F1-score as the primary metric to balance precision and recall, as minimizing false negatives was crucial for this task. Overall, the model performed decently and learned useful patterns, but it wasn’t perfect. The model did better on lighter skin tones but struggled with darker skin tones. This revealed fairness issues in the model. A model that performs well overall may still fail for certain groups. To address this, we would incorporate more diverse data, especially from darker skin tones. We would also test the model for equity across all groups to prevent real-world discrimination.
 
-* Performance metrics (e.g., Kaggle Leaderboard score, F1-score)
-* How your model performed overall
-* How your model performed across different skin tones (AJL)
-* Insights from evaluating model fairness (AJL)
-
-Our model achieved an F1 score of 31% on the validation set and ranked 37 on the Kaggle leaderboard. We used F1 score as the main metric because it balances precision and recall, which felt more important than just accuracy, especially for this task where false negatives could have a real world impact.
-
-The model did okay. It didn’t get everything right, but it learned patterns and was better than just guessing. We tried different models, and the one we used at the end gave me the best results, even if the score wasn’t super high.
-
-When we checked how it worked for different skin tones, we saw it did better on lighter skin and not as well on darker skin. That means it wasn’t totally fair and didn’t treat everyone the same.
-
-Considering fairness got me to consider more about how models can fail in a variety of ways. Just because it performs fine overall doesn't imply that it's fine for everybody. If we could continue to work on it, we'd attempt to correct the bias by incorporating more examples of dark skin so that it might learn better. We would also test it on other groups to ensure that it is equitable for all, not only the most well-represented in the training data. This is necessary because an unfair model could result in individuals being discriminated against or treated unequally in real-world applications, which is unacceptable.
-
-**Potential visualizations to include:**
-
-* Confusion matrix, precision-recall curve, feature importance plot, prediction distribution, outputs from fairness or explainability tools
 ---
 ## **🖼️ Impact Narrative**
 **AJL challenge:**
 
 As Dr. Randi mentioned in her challenge overview, “Through poetry, art, and storytelling, you can reach others who might not know enough to understand what’s happening with the machine learning model or data visualizations, but might still be heavily impacted by this kind of work.”
-As you answer the questions below, consider using not only text, but also illustrations, annotated visualizations, poetry, or other creative techniques to make your work accessible to a wider audience.
-Check out [this guide](https://drive.google.com/file/d/1kYKaVNR\_l7Abx2kebs3AdDi6TlPviC3q/view) from the Algorithmic Justice League for inspiration!
+
+As you answer the questions below, consider using not only text, but also illustrations, annotated visualizations, poetry, or other creative techniques to make your work accessible to a wider audience. Check out [this guide](https://drive.google.com/file/d/1kYKaVNR\_l7Abx2kebs3AdDi6TlPviC3q/view) from the Algorithmic Justice League for inspiration!
 
 1. What steps did you take to address [model fairness](https://haas.berkeley.edu/wp-content/uploads/What-is-fairness_-EGAL2.pdf)? (e.g., leveraging data augmentation techniques to account for training dataset imbalances; using a validation set to assess model performance across different skin tones)
+
+To check how fair our model was, we tested its performance on different skin tones. We found that it performed better on lighter skin tones and struggled with darker skin tones, showing that it wasn’t treating all skin tones equally. To address this, we used data augmentation techniques to add more variety to the training images, especially for darker skin tones. We also thought about adding more images of people with darker skin to make the dataset more balanced. Unfortunately, we didn’t have time to implement all of these changes, but it really opened our eyes to how important fairness is in model development.
+
 2. What broader impact could your work have?
 
-We looked at the model's performance on various skin tones to evaluate its fairness. The model performed better on light skin tones and relatively poorly on dark skin tones, so we concluded that there was an issue. Thus, we thought about adding more photos of individuals with darker skin tones to balance this out. We even thought about changing some of the pictures, like making some lighter or darker, so that the model would get more kinds of photos to train on. We did not get a chance to do all that, but we learned why we should.
-
-If this kind of model were to be used in real-world applications, it could potentially help with something like image analysis or maybe even helping people. However, if the model is seen as unfair, then it could also cause more damage than the benefits it may be intended to have. Our project has shown that it is not enough for a model to simply be decent. It needs to work well for everyone. 
+The idea behind our model has a lot of potential to improve healthcare equity, especially in image analysis for diverse groups. However, to make sure it works fairly for everyone, further improvements are needed. This project highlights the need to build models that provide equitable outcomes, benefiting all groups, not just specific ones.
 
 ---
 
 ## **🚀 Next Steps & Future Improvements**
 
-**Address the following:**
+* **Limitations of the Model:**
+Our model didn’t always produce accurate results, especially when it came to darker skin tones. It struggled with these and was generally less reliable, likely because the training data wasn’t balanced enough. We also saw that the model sometimes gave unpredictable results, which we think is due to the incomplete and unbalanced dataset.
 
-* What are some of the limitations of your model?
-* What would you do differently with more time/resources?
-* What additional datasets or techniques would you explore?
+* **What We Would Do Differently with More Time/Resources:**
+We would focus on making the model fairer by adding more images of people with darker skin tones and try different types of models to see if another approach might work better.
 
-Our model did not always produce correct results. It struggled with darker skin colors and was less accurate. It gave unpredictable results at times, which we blame on the incompleteness and lack of balance of the training data.
-
-If we had more time, we'd try to make the model fairer by adding more pictures of people with darker skin. We would also try different types of models to see if any worked better. And we would clean up the data more so it's easier for the model to learn from.
-
-We would find more datasets with all sorts of skin colors. We'd also use techniques like changing the images size or changing the brightness to help the model practice with differently looking photos. 
+* **Additional Datasets or Techniques to Explore:**
+To improve the model, we’d look for additional datasets that include a wider variety of skin tones, so the model can learn from a more diverse set of images. We’d also consider using pre-trained models, especially ones already trained for image analysis, and fine-tuning them for our task.
 
 ---
 
 ## **📄 References & Additional Resources**
-
-* Cite any relevant papers, articles, or tools used in your project
 
 [Medium – 7 Best Techniques To Improve The Accuracy of CNN W/O Overfitting](https://gurjeet333.medium.com/7-best-techniques-to-improve-the-accuracy-of-cnn-w-o-overfitting-6db06467182f)
 
@@ -125,11 +129,13 @@ We would find more datasets with all sorts of skin colors. We'd also use techniq
 
 | Name | GitHub Handle | Contribution |
 | ----- | ----- | ----- |
-| Andersen Prince | @APrince26 | Contributed to building CNN model |
+| Andersen Prince | @APrince26 | Contributed to building the CNN model and writing the GitHub README file |
 | Dhriti Madireddy | @x | Contributed to building CNN model |
 | Phuoc Uong | @x | Contributed to building CNN model |
-| Ula Nguyen | @Uyenng | Contributed to building CNN model |
-| Vanessa Pliego | @vpliego | Contributed to building CNN model |
+| Ula Nguyen | @Uyenng | Contributed to building the CNN model and writing the GitHub README file  |
+| Vanessa Pliego | @vpliego | Contributed to building the CNN model and writing the GitHub README file  |
 | Yvette Roos | @yvette-m | Contributed to building CNN model |
+
+Break Through Tech AI @MIT
 
 January-March 2025
