@@ -130,8 +130,8 @@ To improve the model, we’d look for additional datasets that include a wider v
 | Name | GitHub Handle | Contribution |
 | ----- | ----- | ----- |
 | Andersen Prince | @APrince26 | Contributed to building the CNN model and writing the GitHub README file |
-| Dhriti Madireddy | @x | Contributed to building CNN model |
-| Phuoc Uong | @x | Contributed to building CNN model |
+| Dhriti Madireddy | @mdhritireddy7 | Contributed to building CNN model |
+| Phuoc Uong | @cnrbd | Contributed to building CNN model |
 | Ula Nguyen | @Uyenng | Contributed to building the CNN model and writing the GitHub README file  |
 | Vanessa Pliego | @vpliego | Contributed to building the CNN model and writing the GitHub README file  |
 | Yvette Roos | @yvette-m | Contributed to building CNN model |
